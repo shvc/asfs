@@ -18,7 +18,7 @@ static int __init force_init(void)
 	printk(KERN_ALERT "This name: %s, state: %d\n",THIS_MODULE->name,\
 		THIS_MODULE->state);
 	list_for_each_entry(mod, &THIS_MODULE->list, list) {
-		if(0 == strcmp(mod->name, "cufs")) {
+		if(0 == strcmp(mod->name, "asfs")) {
 			printk(KERN_ALERT "Tagt name:%s state:%d refcnt: %u\n",\
 				mod->name, mod->state, module_refcount(mod));
 			if(!list_empty(&mod->modules_which_use_me)) {
